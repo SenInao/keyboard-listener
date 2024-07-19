@@ -40,10 +40,15 @@ class Listener:
         newDict = keystates.copy()
         for key in keystates.keys():
             if (self.isPressed(key)):
-                if (not newDict[key]):
-                    if (self.eventHandler):
-                        event = Event(key)
-                        self.eventHandler(event)
+
+                if (newDict[key]):
+                    continue
+
+                if (not self.eventHandler):
+                    continue
+
+                event = Event(key)
+                self.eventHandler(event)
 
                 newDict[key] = True
             else:

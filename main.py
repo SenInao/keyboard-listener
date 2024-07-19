@@ -2,7 +2,7 @@ from listener import Listener
 import time
 
 def eventHandler(event):
-    print(event, event.vkey)
+    print(event)
 
 def main():
     listener = Listener(eventHandler)
