@@ -1,6 +1,6 @@
 import win32api
 import threading
-from viritualKeys import virtual_keys
+from .viritualKeys import virtual_keys
 
 class Event:
     def __init__(self, vkey) -> None:

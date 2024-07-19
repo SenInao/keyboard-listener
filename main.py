@@ -1,11 +1,11 @@
-from listener import Listener
+import keyboardListener
 import time
 
 def eventHandler(event):
     print(event)
 
 def main():
-    listener = Listener(eventHandler)
+    listener = keyboardListener.Listener(eventHandler)
     listener.listen()
 
     try:
