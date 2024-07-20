@@ -5,7 +5,7 @@ def eventHandler(event, foo, foo1):
     print(event, foo, foo1)
 
 def main():
-    listener = keyboardListener.Listener(eventHandler, foo="hei", foo1="world")
+    listener = keyboardListener.Listener(eventHandler, args=["hei", "bei"])
     listener.listen()
 
     try:
