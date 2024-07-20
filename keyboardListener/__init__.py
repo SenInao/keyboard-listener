@@ -11,10 +11,11 @@ class Event:
         return self.string
 
 class Listener:
-    def __init__(self, eventHandler=None) -> None:
+    def __init__(self,  eventHandler=None, **kwargs) -> None:
         self.listening = False
         self.listener = None
         self.eventHandler = eventHandler
+        self.kwargs = kwargs
         self.keystates = {vkey:False for vkey in virtual_keys.keys()}
 
     def isPressed(self, key:int):
@@ -48,7 +49,7 @@ class Listener:
                     continue
 
                 event = Event(key)
-                self.eventHandler(event)
+                self.eventHandler(event, **self.kwargs)
 
                 newDict[key] = True
             else:
